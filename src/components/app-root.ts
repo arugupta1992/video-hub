@@ -1,0 +1,44 @@
+import { LitElement, html, css } from 'lit';
+import { customElement, state } from 'lit/decorators.js';
+
+import './hero-section.js';
+import './intro-text-section.js';
+import './quick-edits-grid.js';
+import './ai-capabilities-stack.js';
+import './clip-maker.js';
+import './timeline-section.js';
+import './features-grid.js';
+import './ai-tools.js';
+import './collaboration-section.js';
+import './templates-section.js';
+import './cta-footer.js';
+import './adobe-header.js';
+
+@customElement('app-root')
+export class AppRoot extends LitElement {
+  @state() private clipMakerOpen = false;
+  
+  static styles = css``;
+
+  render() {
+    return html`
+      <div>
+         <adobe-header></adobe-header>
+        <hero-section></hero-section>
+        <intro-text-section></intro-text-section>
+        <quick-edits-grid></quick-edits-grid>
+        <ai-capabilities-stack @ai-capability-selected=${this._handleAICapabilitySelected}></ai-capabilities-stack>
+        <clip-maker .isOpen=${this.clipMakerOpen} @close-clip-maker=${this._handleCloseClipMaker}></clip-maker>
+      </div>
+    `;
+  }
+
+  private _handleAICapabilitySelected(event: CustomEvent) {
+    this.clipMakerOpen = true;
+    console.log('AI Capability selected:', event.detail);
+  }
+   private _handleCloseClipMaker(event: CustomEvent) {
+    this.clipMakerOpen = false;
+    console.log('AI Capability selected:', event.detail);
+  }
+}
