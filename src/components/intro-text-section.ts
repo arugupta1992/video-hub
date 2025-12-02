@@ -7,12 +7,12 @@ export class IntroTextSection extends LitElement {
     :host {
       display: block;
       background: #ffffff;
-      padding: 80px 24px 100px;
+      padding: 80px 24px 70px;
       text-align: center;
     }
     
     .intro-container {
-      max-width: 900px;
+      max-width: fit-content;
       margin: 0 auto;
       display: flex;
       flex-direction: column;
@@ -20,7 +20,8 @@ export class IntroTextSection extends LitElement {
     }
     
     .intro-description {
-      font-size: clamp(18px, 2vw, 22px);
+      font-size: 24px;
+      width: 659px;
       line-height: 1.6;
       color: #4a4a4a;
       margin: 0;
@@ -53,9 +54,7 @@ export class IntroTextSection extends LitElement {
         Professional video editing, minus the learning curve. Discover the all-in-one editing suite designed to help creators shine.
         </p>
         
-        <h2 class="main-heading">
-        Edit. Export. Impress.
-        </h2>
+      
       </div>
     `;
   }

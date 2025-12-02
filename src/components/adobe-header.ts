@@ -4,7 +4,7 @@ import { customElement, state } from 'lit/decorators.js';
 @customElement('adobe-header')
 export class AdobeHeader extends LitElement {
   @state() dropdownOpen = false;
-  @state() active = 'Photoshop';
+  @state() active = 'Video';
 
   static styles = css`
     :host {
@@ -43,6 +43,8 @@ export class AdobeHeader extends LitElement {
     }
 
     .dropdown {
+      border-left: 1px solid #eaeaea;
+      border-right: 1px solid #eaeaea;
       position: relative;
       cursor: pointer;
       font-size: 15px;
@@ -124,7 +126,7 @@ export class AdobeHeader extends LitElement {
           <div class="logo">Adobe</div>
 
           <div class="dropdown" @click="${this.toggleDropdown}">
-            Creativity & Design ▼
+            Creativity & Design
             ${this.dropdownOpen
               ? html`
                   <div class="dropdown-menu">
@@ -139,7 +141,7 @@ export class AdobeHeader extends LitElement {
           </div>
 
           <nav class="menu">
-            ${['Photoshop', 'Features', 'Mobile', 'Compare Plans', 'Free Trial Details'].map(
+            ${['Video', 'Features', 'Video Tips'].map(
               label => html`
                 <div
                   class="nav-link ${this.active === label ? 'active' : ''}"
@@ -153,7 +155,7 @@ export class AdobeHeader extends LitElement {
         </div>
 
         <div class="right">
-          <button class="btn">Go to Photoshop</button>
+          <button class="btn">Choose a plan</button>
           <div class="icon-grid">⋮⋮⋮</div>
           <button class="btn">Sign in</button>
         </div>

@@ -12,6 +12,7 @@ export class HeroSection extends LitElement {
     }
     
     .hero-inner {
+      padding-top: 40px;
       max-width: 1200px;
       margin: 0 auto;
       display: flex;

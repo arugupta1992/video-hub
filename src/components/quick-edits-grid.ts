@@ -14,7 +14,7 @@ export class QuickEditsGrid extends LitElement {
     :host {
       display: block;
       background: #ffffff;
-      padding: 60px 24px 100px;
+      padding: 35px 24px 35px;
     }
     
     .grid-container {
@@ -176,7 +176,7 @@ export class QuickEditsGrid extends LitElement {
     {
       title: 'Trim Video',
       description: 'Reduce clip length, remove unwanted sections, and speed up your workflow.',
-      videoUrl: '/videos/trim-video.mp4',
+      videoUrl: '/videos/trim.gif',
       // videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
       // category: 'Text & Titles'
     },
@@ -184,14 +184,14 @@ export class QuickEditsGrid extends LitElement {
       title: 'Merge Videos',
       description: 'Combine two or more videos into one cohesive file in seconds.',
       // videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4',
-      videoUrl: '/videos/merge-video.gif',
+      videoUrl: '/videos/merge.gif',
       //category: 'Quick Edit'
     },
     {
       title: 'Convert to GIF',
       description: 'Transform video clips into high-quality animated GIFs instantly.',
-      videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4',
-      category: 'Export'
+      videoUrl: '/videos/convert-gif.gif',
+      //category: 'Export'
     }
   ];
 
@@ -217,7 +217,7 @@ export class QuickEditsGrid extends LitElement {
       <div class="edit-card" @click=${() => this._handleCardClick(edit.title)}>
         <div class="video-container">
           <img src="${edit.videoUrl}" alt="${edit.title}" />
-          <span class="category-badge">${edit.category}</span>
+          
         </div>
         <div class="card-content">
           <h3 class="card-title">${edit.title}</h3>
