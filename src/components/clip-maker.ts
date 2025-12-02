@@ -16,16 +16,20 @@ export class ClipMaker extends LitElement {
       z-index: 9999;
     }
     .popup {
-      width: 90%;
       height: 90%;
       background: white;
-      border-radius: 24px;
-      padding: 24px;
+      border-radius: 5px;
+      padding: 0px;
       display: flex;
       position: relative;
       overflow: hidden;
       font-family: Inter, sans-serif;
     }
+    .popup video{
+          width: 100%;
+        height: 104%;
+        margin: -10px -2px;
+      }
 
     button.main-btn {
       padding: 12px 24px;
@@ -121,47 +125,14 @@ export class ClipMaker extends LitElement {
         ? html`
             <div class="overlay">
               <div class="popup">
-                <button class="close-btn" @click="${this._handleClose}">✕</button>
-
-                <!-- Left section -->
-                <div class="left">
-                  <h1 style="font-size: 28px; font-weight: 600;">Clip maker</h1>
-                  <p style="margin-top: 8px; color: #475569;">
-                    Quickly turn a video into multiple clips, ready to share on social media.
-                  </p>
-
-                  <div style="margin-top: 16px; background: #eef2ff; padding: 12px 16px; border-radius: 12px; color:#4f46e5;">
-                    At this time, upload videos in English with speech.
-                  </div>
-
-                  <div class="upload-box" style="margin-top: 24px;">
-                    <div style="font-size: 24px; margin-bottom: 8px;">⬆️</div>
-                    Drag & drop video or <span style="color:#4f46e5; cursor:pointer;">browse</span>
-                    <div style="font-size: 12px; margin-top: 4px; color:#94a3b8;">Up to 1GB • 1–2 hours</div>
-                  </div>
-
-                  <div style="margin-top: 24px; display:flex; align-items:center; justify-content:space-between;">
-                    <select style="padding:8px 12px; border-radius:12px;">
-                      <option>Reel / Story</option>
-                      <option>Square</option>
-                      <option>Landscape</option>
-                    </select>
-
-                    <label><input type="checkbox" /> Add captions</label>
-                  </div>
-
-                  <button style="margin-top:24px; width:100%; padding:12px; opacity:0.6; border-radius:12px; border:none; background:#4f46e5; color:white; cursor:not-allowed;">
-                    Generate clips
-                  </button>
-                </div>
-
-                <!-- Right section -->
-                <div class="right">
-                  <div style="display:flex;background-image:url(./videos/clip-maker-hero.webp);width: 100%;height: 100%; background-size:cover;" >
-                  </div>
-
-                  <button class="share-btn">Share</button>
-                </div>
+                <video
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                >
+                  <source src="/videos/AV2.mp4" type="video/mp4" />
+                </video>
               </div>
             </div>
           `

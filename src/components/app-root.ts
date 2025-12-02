@@ -20,6 +20,20 @@ export class AppRoot extends LitElement {
   
   static styles = css``;
 
+  _escClose = (e: KeyboardEvent) => {
+    if (e.key === 'Escape') this.clipMakerOpen = false;;
+  };
+  
+  connectedCallback() {
+    super.connectedCallback();
+    // ESC key support
+    document.addEventListener('keydown', this._escClose);
+  }
+
+  disconnectedCallback() {
+    super.disconnectedCallback();
+    document.removeEventListener('keydown', this._escClose);
+  }
   render() {
     return html`
       <div>
