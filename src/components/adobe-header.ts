@@ -26,7 +26,7 @@ export class AdobeHeader extends LitElement {
     .left {
       display: flex;
       align-items: center;
-      gap: 32px;
+      gap: 10px;
     }
 
     .logo {
@@ -48,7 +48,7 @@ export class AdobeHeader extends LitElement {
       position: relative;
       cursor: pointer;
       font-size: 15px;
-      padding: 4px 6px;
+      padding: 4px 20px;
     }
 
     .dropdown-menu {
@@ -123,8 +123,7 @@ export class AdobeHeader extends LitElement {
     return html`
       <header>
         <div class="left">
-          <div class="logo">Adobe</div>
-
+          <div class="logo"><img style="display: block;width: 75px;" loading="lazy" src="/videos/adobe-logo.svg" alt="Adobe, Inc."></div>
           <div class="dropdown" @click="${this.toggleDropdown}">
             Creativity & Design
             ${this.dropdownOpen
