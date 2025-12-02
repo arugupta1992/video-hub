@@ -43,13 +43,15 @@ export class ClipMaker extends LitElement {
 
     .close-btn {
       position: absolute;
-      top: 3px;
-      right: 6px;
-      background: #e5e7eb;
+      top: -2px;
+      right: 0px;
+      background: transparent;
       border: none;
-      padding: 8px;
-      border-radius: 50%;
+      padding: 10px;
       cursor: pointer;
+      z-index: 99999999;
+      font-weight: 600;
+      font-size: 20px;
     }
 
     .left, .right {
@@ -125,6 +127,7 @@ export class ClipMaker extends LitElement {
         ? html`
             <div class="overlay">
               <div class="popup">
+                <button class="close-btn" @click="${this._handleClose}">✕</button>
                 <video
                   autoplay
                   muted
