@@ -48,7 +48,8 @@ coverage/
 .cache/
 
 # Large video files
-videos/
+videos/*.mp4
+videos/*.gif
 videos/clip-maker.gif
 videos/hero-marque.mp4
 

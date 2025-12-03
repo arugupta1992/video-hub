@@ -119,6 +119,21 @@ export class ClipMaker extends LitElement {
       border-radius: 6px;
       font-size: 12px;
     }
+    .powered-by{
+            display: flex;
+      gap: 10px;
+      position: absolute;
+      right: 2em;
+      top: 14px;
+      align-items: center;
+      font-weight: 600;
+      font-size: 15px;
+    }
+    .powered-by img{
+         width: 28px;
+    max-height: 28px;
+    margin-top: 4px;
+    }
   `;
 
   render() {
@@ -127,7 +142,7 @@ export class ClipMaker extends LitElement {
         ? html`
             <div class="overlay">
               <div class="popup">
-                <button class="close-btn" @click="${this._handleClose}">✕</button>
+                <span class="powered-by"><span><img src="/videos/AEL.png" ></span> <span> Powered by Adobe Express</span> </span>
                 <video
                   autoplay
                   muted

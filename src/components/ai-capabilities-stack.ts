@@ -7,6 +7,8 @@ interface AICapability {
   ctaText: string;
   demoImage: string;
   videoUrl?: string;
+  powereByText?: string;
+  icon?: string;
 }
 
 @customElement('ai-capabilities-stack')
@@ -143,7 +145,15 @@ export class AICapabilitiesStack extends LitElement {
         max-width: 100%;
       }
     }
-    
+    .powered-by{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 600;
+      }
+      .powered-by img{
+        width: 24px;
+      }
     @media (max-width: 768px) {
       :host {
         padding: 60px 20px;
@@ -165,21 +175,27 @@ export class AICapabilitiesStack extends LitElement {
       description: 'Create trending videos in minutes with the Adobe Express Clip maker. Simply upload your video and watch as the Clip maker turns key moments into attention-grabbing short clips, ready for sharing on social media.',
       ctaText: 'Generate',
       demoImage: 'https://picsum.photos/800/600?random=1',
-      videoUrl: '/videos/clip-maker.gif'
+      videoUrl: '/videos/clip-maker.gif',
+      powereByText: 'Powered by Adobe Express',
+      icon: '/videos/AEL.png'
     },
     {
       title: 'Skip the endless scrubbing',
       description: 'Instantly surface the best bits of your footage with Highlights. AI analyzes your video and identifies the most engaging moments automatically.',
       ctaText: 'Try now',
       demoImage: 'https://picsum.photos/800/600?random=2',
-      videoUrl: '/videos/highlight.mp4'
+      videoUrl: '/videos/highlight.mp4',
+      powereByText: 'Powered by Adobe Premiere Elements',
+      icon: '/videos/premiereElement.png'
     },
     {
       title: 'Extend video and audio clips with Generative Extend.',
       description: 'Seamlessly add frames to the beginning or end of a shot with generative AI in Adobe Premiere. Just click, drag, and extend the length of any clip',
       ctaText: 'Try now',
       demoImage: 'https://picsum.photos/800/600?random=3',
-      videoUrl: '/videos/generative-extend.mp4'
+      videoUrl: '/videos/generative-extend.mp4',
+      powereByText: 'Powered by Adobe Premiere Pro',
+      icon: '/videos/premierePro.jpg'
     },
     {
       title: 'Smart audio cleanup',
@@ -208,6 +224,7 @@ export class AICapabilitiesStack extends LitElement {
       <div class="capability-item">
         <div class="content-side">
           <h3 class="capability-title">${capability.title}</h3>
+          <small class="powered-by"><img src="${capability.icon}" > <span>${capability.powereByText}</span> </span></small>
           <p class="capability-description">${capability.description}</p>
           <div class="capability-cta">
             <button class="cta-button" @click=${() => this._handleCTA(capability.title)}>

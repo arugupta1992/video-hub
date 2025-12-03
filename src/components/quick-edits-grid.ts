@@ -157,7 +157,6 @@ export class QuickEditsGrid extends LitElement {
         margin-bottom: 40px;
       }
     }
-    
     @media (min-width: 769px) and (max-width: 1200px) {
       .edits-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -220,7 +219,7 @@ export class QuickEditsGrid extends LitElement {
           
         </div>
         <div class="card-content">
-          <h3 class="card-title">${edit.title}</h3>
+          <h3 class="card-title">${edit.title} <span style="float:right"><img src="/videos/AEL.png" style="width: 27px;max-height: 27px;"></span></h3>
           <p class="card-description">${edit.description}</p>
         </div>
       </div>
